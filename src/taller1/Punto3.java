@@ -84,19 +84,16 @@ public class Punto3 {
                    calculadora1.Numero1 = a;
                    calculadora1.Seno(a);
                    System.out.println(calculadora1.resultado);
-                   Math.toDegrees(calculadora1.resultado);
                    break;
                case 6:
                    calculadora1.Numero1 = a;
                    calculadora1.Coseno(a);
                    System.out.println(calculadora1.resultado);
-                   Math.toDegrees(calculadora1.resultado);
                    break;
                case 7:
                    calculadora1.Numero1 = a;
                    calculadora1.tangente(a);
                    System.out.println(calculadora1.resultado);
-                   Math.toDegrees(calculadora1.resultado);
                    break;
                case 8:
                    System.out.print("Digite su segundo numero:  ");
