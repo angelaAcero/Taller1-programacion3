@@ -62,6 +62,7 @@ public class Punto4 extends javax.swing.JFrame {
         IVA = new javax.swing.JButton();
         texto2 = new javax.swing.JLabel();
         borrar = new javax.swing.JButton();
+        negativo = new javax.swing.JButton();
 
         Clean1.setText("Clean");
         Clean1.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +83,7 @@ public class Punto4 extends javax.swing.JFrame {
         });
 
         texto.setBackground(new java.awt.Color(204, 255, 204));
-        texto.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        texto.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         texto.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         texto.setOpaque(true);
 
@@ -249,6 +250,13 @@ public class Punto4 extends javax.swing.JFrame {
             }
         });
 
+        negativo.setText("(-)");
+        negativo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                negativoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -285,7 +293,8 @@ public class Punto4 extends javax.swing.JFrame {
                             .addComponent(Multiplicacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Suma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Raiz)
-                            .addComponent(dott, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(dott, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(negativo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(Resta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -353,7 +362,9 @@ public class Punto4 extends javax.swing.JFrame {
                             .addComponent(Clean)
                             .addComponent(IVA))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(borrar))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(borrar)
+                            .addComponent(negativo)))
                     .addComponent(Numero0, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -465,7 +476,7 @@ public class Punto4 extends javax.swing.JFrame {
 
     private void ExponencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExponencialActionPerformed
         // TODO add your handling code here:
-         calculadora2.Numero1 = Float.parseFloat(texto.getText());
+        calculadora2.Numero1 = Float.parseFloat(texto.getText());
         texto2.setText(texto.getText()+"^(");
         q=9;
         texto.setText("");
@@ -497,7 +508,7 @@ public class Punto4 extends javax.swing.JFrame {
                    break;
                case 2:
                    calculadora2.Resta();
-                    texto2.setText(texto2.getText()+texto.getText());
+                   texto2.setText(texto2.getText()+texto.getText());
                    texto.setText(String.valueOf(calculadora2.resultado));
                    break;
                case 3:
@@ -509,7 +520,7 @@ public class Punto4 extends javax.swing.JFrame {
                    
                    if (calculadora2.resultado == 0)
                    {
-                       texto.setText("ERROR..No se puede dividir entre 0");
+                       texto.setText("ERROR...indeterminacion");
                    }
                    else {
                    calculadora2.Division();
@@ -536,7 +547,7 @@ public class Punto4 extends javax.swing.JFrame {
                    calculadora2.Raiz();
                      if (isNaN(calculadora2.resultado)){
                      texto2.setText(texto2.getText()+texto.getText()+")");
-                     texto.setText("ERROR..Numero imaginario :(");
+                     texto.setText("ERROR..imaginario :(");
                       }
                      else{
                    texto2.setText(texto2.getText()+texto.getText()+")");
@@ -572,8 +583,9 @@ public class Punto4 extends javax.swing.JFrame {
 
     private void RestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestaActionPerformed
         
-        texto.setText(texto.getText()+"-");
+        
         calculadora2.Numero1 = Float.parseFloat(texto.getText());
+        
         texto2.setText(texto.getText()+"-");
         q=2;
         texto.setText("");        
@@ -606,6 +618,10 @@ public class Punto4 extends javax.swing.JFrame {
     private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
        texto.setText("");
     }//GEN-LAST:event_borrarActionPerformed
+
+    private void negativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_negativoActionPerformed
+        texto.setText(texto.getText()+"-"); 
+    }//GEN-LAST:event_negativoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -667,6 +683,7 @@ public class Punto4 extends javax.swing.JFrame {
     private javax.swing.JButton dott;
     private javax.swing.JButton igual;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton negativo;
     private javax.swing.JButton seno;
     private javax.swing.JButton tangente;
     private javax.swing.JLabel texto;
