@@ -446,7 +446,7 @@ public class Punto4 extends javax.swing.JFrame {
     private void senoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senoActionPerformed
         // TODO add your handling code here:
         
-        texto2.setText("Sin("+texto.getText()+"°)");
+        texto2.setText("Sin("+texto.getText()+")");
         q=5;
         
     }//GEN-LAST:event_senoActionPerformed
@@ -454,14 +454,14 @@ public class Punto4 extends javax.swing.JFrame {
     private void cosenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cosenoActionPerformed
         // TODO add your handling code here:
         
-        texto2.setText("Cos("+texto.getText()+"°)");
+        texto2.setText("Cos("+texto.getText()+")");
         q=6;
         
     }//GEN-LAST:event_cosenoActionPerformed
 
     private void tangenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tangenteActionPerformed
 
-        texto2.setText("Tan("+texto.getText()+"°)");
+        texto2.setText("Tan("+texto.getText()+")");
         q=7;
     }//GEN-LAST:event_tangenteActionPerformed
 
