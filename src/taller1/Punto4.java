@@ -518,7 +518,7 @@ public class Punto4 extends javax.swing.JFrame {
                    break;
                case 4:
                    
-                   if (calculadora2.resultado == 0)
+                   if (calculadora2.Numero2 == 0)
                    {
                        texto.setText("ERROR...indeterminacion");
                    }
